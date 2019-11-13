@@ -1,0 +1,21 @@
+<p>meuble-list works!</p>
+<h2>{{d |date }}</h2>
+<div *ngFor="let t of meubles">
+    
+    <app-meuble [T]="t" ></app-meuble>
+    
+   
+    </div>
+    <select [(ngModel)]="choix">
+        <option value="Neuf">Neuf</option>
+        <option value="Occasion">Occasion</option>
+        <option value=""></option>
+    </select>
+    <!--<p *ngIf="choix=='Neuf';then N else O"></p>
+    <ng-template #N>{{n}} de meuble(s) à l'état Neuf</ng-template>
+    <ng-template #O>{{c}} de meuble(s) à l'etat Occasion</ng-template>!-->
+    <div [ngSwitch]="true">
+<p *ngSwitchCase="choix=='Neuf'">{{n}} de meuble(s) à l'état Neuf</p>
+<p *ngSwitchCase="choix=='Occasion'">{{c}} de meuble(s) à l'etat Occasion</p>
+<p SwitchDefault></p>
+    </div>

@@ -1,0 +1,11 @@
+<div>
+    <h3>{{T.libelle}}</h3><!--libelle:'table',img:'../assets/table.jpg',prixTTC:47,neuf:true-->
+    <img [src]="T.img"/>
+    <ul [ngClass]="{'c1':T.prixTTC>100 && T.prixTTC<200}">
+        <li>Prix : {{T.prixTTC}}</li>
+        <li><input type="checkbox" [checked]="T.neuf" [disabled]="f" /> Neuf</li>
+        <li *ngIf="T.neuf==false">
+            <button (click)="affiche(T.prixTTC)" >Prix Original</button><input type="text" #n [value]="p" [(ngModel)]="ch"/>
+        </li>
+    </ul>
+</div>
